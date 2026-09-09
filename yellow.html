@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow — Studio de contenu &amp; stratégie digitale à Paris</title>
+    <meta name="description"
+        content="Yellow est un studio parisien spécialisé en production de contenu, direction artistique et stratégie digitale (SEO, Google Ads) pour les marques mode, beauté et lifestyle.">
+    <meta property="og:title" content="Yellow — Studio de contenu &amp; stratégie digitale">
+    <meta property="og:description"
+        content="Production de contenu, direction artistique et stratégie d'acquisition (SEO, Google Ads) pour les marques qui veulent capter l'attention et convertir.">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --paper: #FFFFFF;
+            --ink: #111111;
+            --ink-soft: #6E6E6E;
+            --line: rgba(17, 17, 17, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            padding: 20px;
+            border-bottom: 1px solid var(--line);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .topbar a {
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .topbar a:hover {
+            color: var(--ink);
+        }
+
+        .topbar a:nth-child(3):hover {
+            color: var(--ink);
+        }
+
+        .logo-hero {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .logo-hero .mark {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: clamp(60px, 13vw, 180px);
+            letter-spacing: -3px;
+            line-height: 0.9;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-hero .tag {
+            margin-top: 18px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 82vh;
+            min-height: 460px;
+            max-height: 900px;
+        }
+
+        .label {
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            padding: 46px 20px 26px;
+            font-weight: 400;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+        }
+
+        .grid .cell {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .grid.wide .cell {
+            aspect-ratio: 4/5;
+        }
+
+        .grid .cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 16px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        }
+
+        .grid .cap h3 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .split-img {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px;
+        }
+
+        .split-img .cell {
+            height: 60vh;
+            min-height: 380px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .split-img .cell .cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px 24px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+            color: #fff;
+        }
+
+        .split-img .cell .cap .who {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        .split-img .cell .cap h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .quote-media {
+            position: relative;
+            height: 78vh;
+            min-height: 460px;
+            max-height: 780px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .quote-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.32);
+        }
+
+        .quote-media img {
+            position: absolute;
+            inset: 0;
+        }
+
+        .quote-media p {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+            font-size: clamp(40px, 7vw, 92px);
+            font-weight: 900;
+            max-width: 18ch;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            padding: 0 24px;
+        }
+
+        .offers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--line);
+            border-left: 1px solid var(--line);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .offer {
+            padding: 32px 26px;
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .offer.mid {
+            background: #FAFAFA;
+        }
+
+        .offer .n {
+            font-size: 12px;
+            color: var(--ink);
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .offer h3 {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .offer .cta-quote {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 13px;
+            color: var(--ink);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            padding-bottom: 2px;
+        }
+
+        .offer .cta-quote:hover {
+            color: var(--ink);
+            border-color: var(--ink);
+        }
+
+        .offer ul {
+            list-style: none;
+        }
+
+        .offer li {
+            font-size: 13px;
+            color: var(--ink-soft);
+            padding: 8px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .offer li:first-child {
+            border-top: none;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px;
+        }
+
+        .team .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team .cell {
+            position: relative;
+            height: 62vh;
+            min-height: 380px;
+            overflow: hidden;
+        }
+
+        .team .cell img {
+            filter: grayscale(1);
+        }
+
+        .team .cell .cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 26px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+            color: #fff;
+        }
+
+        .team .cell .cap h3 {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .team .cell .cap .role {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        .team .col p {
+            padding: 22px 30px 40px;
+            font-size: 14px;
+            color: var(--ink-soft);
+            max-width: 46ch;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 90px 20px 60px;
+        }
+
+        .contact h2 {
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 800;
+            max-width: 14ch;
+            margin: 0 auto 26px;
+        }
+
+        .contact a.mail {
+            display: inline-block;
+            font-size: 16px;
+            color: var(--ink);
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 4px;
+            text-decoration: none;
+        }
+
+        .contact a.mail:hover {
+            color: var(--ink);
+            border-color: var(--ink);
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 30px;
+            border-top: 1px solid var(--line);
+            font-size: 12px;
+            color: var(--ink-soft);
+        }
+
+        .socials {
+            display: flex;
+            gap: 14px;
+        }
+
+        .socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            background: var(--ink);
+            color: #fff;
+            border-color: var(--ink);
+        }
+
+        .socials svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 760px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .split-img {
+                grid-template-columns: 1fr;
+            }
+
+            .offers {
+                grid-template-columns: 1fr;
+            }
+
+            .team {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                gap: 16px;
+                flex-wrap: wrap;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="topbar" aria-label="Navigation principale">
+        <a href="#offers">Offers</a>
+        <a href="#talks">Talks</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header class="logo-hero">
+        <h1 class="mark">YELLOW</h1>
+        <p class="tag">Content &amp; Digital Agency Studio</p>
+    </header>
+
+    <div class="hero-img">
+        <img src="https://picsum.photos/seed/traitt-hero/1800/1400?grayscale"
+            alt="Studio Yellow, direction artistique et stratégie digitale à Paris">
+    </div>
+
+    <main>
+
+        <h2 class="label">What we do</h2>
+        <p
+            style="max-width:60ch;margin:0 auto 8px;padding:0 20px;text-align:center;color:var(--ink-soft);font-size:15px;">
+            Yellow réunit deux expertises complémentaires : la création de contenu qui capte l'attention, et la
+            stratégie digitale qui la transforme en clients.
+        </p>
+        <div class="split-img">
+            <div class="cell">
+                <img src="https://picsum.photos/seed/traitt-content-img/900/1000?grayscale"
+                    alt="Production de contenu et direction artistique par Célina Bailly">
+                <div class="cap">
+                    <div class="who">Célina</div>
+                    <h3>Content &amp; Art Direction</h3>
+                </div>
+            </div>
+            <div class="cell">
+                <img src="https://picsum.photos/seed/traitt-strategy-img/900/1000?grayscale"
+                    alt="Stratégie digitale, SEO et acquisition par Madeleine Haddad">
+                <div class="cap">
+                    <div class="who">Madeleine</div>
+                    <h3>Strategy &amp; Acquisition</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-media">
+            <img src="https://picsum.photos/seed/traitt-quote/1800/1200?grayscale" alt="">
+            <p>La visibilité ne vend rien. Le ciblage, si.</p>
+        </div>
+
+        <h2 class="label" id="offers">Offers</h2>
+        <div class="offers">
+            <div class="offer">
+                <div class="n">01</div>
+                <h3>Essentiel</h3>
+                <a href="#contact" class="cta-quote">Demander un devis</a>
+                <ul style="margin-top:16px;">
+                    <li>Réseaux sociaux, 1 plateforme</li>
+                    <li>Calendrier mensuel</li>
+                    <li>SEO/Ads en option</li>
+                </ul>
+            </div>
+            <div class="offer mid">
+                <div class="n">02</div>
+                <h3>Croissance</h3>
+                <a href="#contact" class="cta-quote">Demander un devis</a>
+                <ul style="margin-top:16px;">
+                    <li>Multi-formats, 2-3 plateformes</li>
+                    <li>Reels &amp; shootings</li>
+                    <li>SEO ou Ads inclus</li>
+                </ul>
+            </div>
+            <div class="offer">
+                <div class="n">03</div>
+                <h3>Signature</h3>
+                <a href="#contact" class="cta-quote">Demander un devis</a>
+                <ul style="margin-top:16px;">
+                    <li>Production complète</li>
+                    <li>SEO + Ads combinés</li>
+                    <li>Pilotage business</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="label" id="talks">Talks</h2>
+        <div class="grid wide">
+            <div class="cell">
+                <img src="https://picsum.photos/seed/tt1/700/900?grayscale"
+                    alt="Conférence Comprendre les codes de la Génération Z">
+                <div class="cap">
+                    <h3>Comprendre les codes de la Génération Z</h3>
+                </div>
+            </div>
+            <div class="cell">
+                <img src="https://picsum.photos/seed/tt2/700/900?grayscale"
+                    alt="Conférence Megatrends, anticipation culturelle">
+                <div class="cap">
+                    <h3>Megatrends — anticipation culturelle</h3>
+                </div>
+            </div>
+            <div class="cell">
+                <img src="https://picsum.photos/seed/tt3/700/900?grayscale"
+                    alt="Conférence croisée sur la Génération Z au travail et dans la consommation">
+                <div class="cap">
+                    <h3>Ce que la Gen Z change</h3>
+                </div>
+            </div>
+            <div class="cell">
+                <img src="https://picsum.photos/seed/tt4/700/900?grayscale" alt="Intervention Yellow en entreprise">
+                <div class="cap">
+                    <h3>Sur mesure, en entreprise</h3>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="label" id="team">Our team</h2>
+        <div class="team">
+            <div class="col">
+                <div class="cell">
+                    <img src="https://picsum.photos/seed/traitt-celina/900/1200"
+                        alt="Portrait de Célina Bailly, directrice artistique">
+                    <div class="cap">
+                        <h3>Célina Bailly</h3>
+                        <div class="role">Content &amp; Art Direction</div>
+                    </div>
+                </div>
+                <p>15 ans de direction créative mode. Ex-Head of Design chez Promostyl. A dirigé plus de 20 trend books
+                    et accompagné des marques comme Asics, Umbro et Etam.</p>
+            </div>
+            <div class="col">
+                <div class="cell">
+                    <img src="https://picsum.photos/seed/traitt-madeleine/900/1200"
+                        alt="Portrait de Madeleine Haddad, stratégie digitale">
+                    <div class="cap">
+                        <h3>Madeleine Haddad</h3>
+                        <div class="role">Strategy &amp; Acquisition</div>
+                    </div>
+                </div>
+                <p>20 ans de marketing, dont 10 en stratégie numérique. Spécialiste du marketing générationnel depuis
+                    2015.</p>
+            </div>
+        </div>
+
+        <div class="contact" id="contact">
+            <h2>Let's talk.</h2>
+            <a href="mailto:hello@yellow.agency" class="mail">hello@yellow.agency</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div>YELLOW</div>
+        <div class="socials">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z" />
+                </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm0 5.3a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm4.08-5.42a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zM12 3.62c2.4 0 2.69.01 3.64.05.88.04 1.36.19 1.68.31.42.16.72.36 1.03.67.31.31.51.61.67 1.03.12.32.27.8.31 1.68.04.95.05 1.24.05 3.64s-.01 2.69-.05 3.64c-.04.88-.19 1.36-.31 1.68-.16.42-.36.72-.67 1.03-.31.31-.61.51-1.03.67-.32.12-.8.27-1.68.31-.95.04-1.24.05-3.64.05s-2.69-.01-3.64-.05c-.88-.04-1.36-.19-1.68-.31a2.78 2.78 0 0 1-1.03-.67 2.78 2.78 0 0 1-.67-1.03c-.12-.32-.27-.8-.31-1.68-.04-.95-.05-1.24-.05-3.64s.01-2.69.05-3.64c.04-.88.19-1.36.31-1.68.16-.42.36-.72.67-1.03.31-.31.61-.51 1.03-.67.32-.12.8-.27 1.68-.31.95-.04 1.24-.05 3.64-.05zm0-1.62c-2.44 0-2.75.01-3.71.05-.96.04-1.62.2-2.19.42-.6.23-1.1.55-1.61 1.05-.5.5-.82 1.01-1.05 1.61-.22.58-.38 1.24-.42 2.2-.04.96-.05 1.27-.05 3.71s.01 2.75.05 3.71c.04.96.2 1.62.42 2.2.23.6.55 1.1 1.05 1.61.5.5 1.01.82 1.61 1.05.58.22 1.24.38 2.2.42.96.04 1.27.05 3.71.05s2.75-.01 3.71-.05c.96-.04 1.62-.2 2.2-.42.6-.23 1.1-.55 1.61-1.05.5-.5.82-1.01 1.05-1.61.22-.58.38-1.24.42-2.2.04-.96.05-1.27.05-3.71s-.01-2.75-.05-3.71c-.04-.96-.2-1.62-.42-2.2a4.4 4.4 0 0 0-1.05-1.61 4.4 4.4 0 0 0-1.61-1.05c-.58-.22-1.24-.38-2.2-.42-.96-.04-1.27-.05-3.71-.05z" />
+                </svg>
+            </a>
+        </div>
+        <div>Paris — 2026</div>
+    </footer>
+
+</body>
+
+</html>
