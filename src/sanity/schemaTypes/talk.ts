@@ -63,6 +63,12 @@ export const talk = defineType({
       description: "Image au ratio vertical (4:5)",
       options: { hotspot: true },
     }),
+    defineField({
+      name: "imageUrl",
+      title: "URL de l'image (Fallback ou externe)",
+      type: "url",
+      description: "Lien de secours ou externe de l'image",
+    }),
   ],
   preview: {
     select: {

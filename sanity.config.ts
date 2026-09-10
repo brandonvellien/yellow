@@ -2,6 +2,7 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { schemaTypes } from "./src/sanity/schemaTypes";
 import { projectId, dataset } from "./src/sanity/env";
+import { seedTool } from "./src/sanity/plugins/seedTool";
 
 export default defineConfig({
   basePath: "/studio",
@@ -32,11 +33,33 @@ export default defineConfig({
                   .documentId("heroAndManifesto")
               ),
             S.divider(),
-            S.documentTypeListItem("offer").title("🏷️ Offres & Packs Tarifaires"),
-            S.documentTypeListItem("talk").title("🎙️ Conférences & Talks"),
-            S.documentTypeListItem("teamMember").title("👥 Membres de l'Équipe"),
+            S.listItem()
+              .title("🏷️ Offres & Packs Tarifaires")
+              .schemaType("offer")
+              .child(
+                S.documentTypeList("offer")
+                  .title("Offres & Packs Tarifaires")
+                  .defaultOrdering([{ field: "order", direction: "asc" }])
+              ),
+            S.listItem()
+              .title("🎙️ Conférences & Talks")
+              .schemaType("talk")
+              .child(
+                S.documentTypeList("talk")
+                  .title("Conférences & Talks")
+                  .defaultOrdering([{ field: "order", direction: "asc" }])
+              ),
+            S.listItem()
+              .title("👥 Membres de l'Équipe")
+              .schemaType("teamMember")
+              .child(
+                S.documentTypeList("teamMember")
+                  .title("Membres de l'Équipe")
+                  .defaultOrdering([{ field: "order", direction: "asc" }])
+              ),
           ]),
     }),
+    seedTool(),
   ],
   schema: {
     types: schemaTypes,

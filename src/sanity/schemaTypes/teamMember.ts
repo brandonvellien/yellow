@@ -35,6 +35,12 @@ export const teamMember = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: "photoUrl",
+      title: "URL de la photo (Fallback ou externe)",
+      type: "url",
+      description: "Lien de secours ou externe de la photo",
+    }),
+    defineField({
       name: "bio",
       title: "Biographie / Parcours",
       type: "text",
