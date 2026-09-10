@@ -21,6 +21,7 @@ export async function getPageData(): Promise<PageData> {
         instagramUrl: data.settings?.instagramUrl || fallbackData.settings.instagramUrl,
         linkedinUrl: data.settings?.linkedinUrl || fallbackData.settings.linkedinUrl,
         cityAndYear: data.settings?.cityAndYear || fallbackData.settings.cityAndYear,
+        enableGrayscaleFilter: !!data.settings?.enableGrayscaleFilter,
       },
       hero: {
         studioName: data.hero?.studioName || fallbackData.hero.studioName,

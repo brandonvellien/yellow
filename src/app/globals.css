@@ -138,13 +138,11 @@ img {
 }
 
 .hero-img img {
-  filter: grayscale(1);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-img:hover img {
   transform: scale(1.02);
-  filter: grayscale(0.85);
 }
 
 /* LABELS & HEADINGS */
@@ -174,13 +172,11 @@ img {
 }
 
 .split-img .cell img {
-  filter: grayscale(1);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .split-img .cell:hover img {
   transform: scale(1.04);
-  filter: grayscale(0.7);
 }
 
 .split-img .cell .cap {
@@ -234,7 +230,6 @@ img {
 .quote-media img {
   position: absolute;
   inset: 0;
-  filter: grayscale(1);
   transform: scale(1.02);
   transition: transform 1.2s ease;
 }
@@ -360,13 +355,11 @@ img {
 }
 
 .grid .cell img {
-  filter: grayscale(1);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .grid .cell:hover img {
   transform: scale(1.08);
-  filter: grayscale(0.4);
 }
 
 .grid .cell .discover-hint {
@@ -426,7 +419,7 @@ img {
 }
 
 .talk-modal-media img {
-  filter: grayscale(1);
+  object-fit: cover;
 }
 
 .talk-modal-body {
@@ -633,13 +626,21 @@ img {
 }
 
 .team .cell img {
-  filter: grayscale(1);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .team .cell:hover img {
   transform: scale(1.04);
-  filter: grayscale(0.5);
+}
+
+/* OPTIONAL BLACK & WHITE FILTER (ACTIVABLE DEPUIS LE BO) */
+body.grayscale-mode img {
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+
+body.grayscale-mode img:hover {
+  filter: grayscale(0.4);
 }
 
 .team .cell .cap {

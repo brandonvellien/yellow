@@ -58,6 +58,14 @@ export const siteSettings = defineType({
       description: "Texte à droite dans le pied de page",
       initialValue: "Paris — 2026",
     }),
+    defineField({
+      name: "enableGrayscaleFilter",
+      title: "Style des photos : Forcer le Noir & Blanc sur le site ?",
+      type: "boolean",
+      description:
+        "Désactivé par défaut (couleurs naturelles réelles des photos). Activez cette option si vous souhaitez forcer un filtre noir et blanc éditorial sur toutes les images du site.",
+      initialValue: false,
+    }),
   ],
   preview: {
     prepare() {

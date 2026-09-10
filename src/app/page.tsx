@@ -14,7 +14,7 @@ export default async function Home() {
   const data = await getPageData();
 
   return (
-    <>
+    <div className={data.settings.enableGrayscaleFilter ? "grayscale-mode" : ""}>
       <Navbar />
       <Hero data={data.hero} />
       <main>
@@ -28,6 +28,6 @@ export default async function Home() {
         <Team team={data.team} />
         <ContactFooter settings={data.settings} />
       </main>
-    </>
+    </div>
   );
 }

@@ -6,6 +6,7 @@ export interface SiteSettingsData {
   instagramUrl: string;
   linkedinUrl: string;
   cityAndYear: string;
+  enableGrayscaleFilter?: boolean;
 }
 
 export interface HeroAndManifestoData {
